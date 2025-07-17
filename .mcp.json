@@ -1,0 +1,13 @@
+{
+  "servers": {
+    "GuidMCPServer": {
+      "type": "stdio",
+      "command": "dotnet",
+      "args": [
+        "run",
+        "--project",
+        "./GuidMCPServer/"
+      ]
+    }
+  }
+}
