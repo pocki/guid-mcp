@@ -32,7 +32,11 @@ jobs:
       run: dotnet build --configuration Release /p:Version=${VERSION}
     - name: Pack
       run: dotnet pack --configuration Release /p:Version=${VERSION} --no-build --output .
-    - name: Push
-      run: dotnet nuget push pock-programming.guid-mcp.${VERSION}.nupkg --api-key ${APIKEY}
+    - name: Push NuGet package NuGet.org
+      run: dotnet nuget push "*.nupkg" --source https://api.nuget.org/v3/index.json --api-key ${APIKEY}
       env:
         APIKEY: ${{ secrets.NUGETAPIKEY }}
+    - name: Push NuGet package Github
+      run: dotnet nuget push "*.nupkg" --source https://nuget.pkg.github.com/pocki/index.json --api-key ${GITHUB_TOKEN}
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
