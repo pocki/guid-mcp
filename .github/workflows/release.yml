@@ -31,7 +31,7 @@ jobs:
     - name: Build
       run: dotnet build --configuration Release /p:Version=${VERSION}
     - name: Pack
-      run: dotnet pack --configuration Release /p:Version=${VERSION} --no-build --output .
+      run: dotnet pack --configuration Release --include-symbols /p:Version=${VERSION} /p:ContinuousIntegrationBuild=true /p:PackageVersion=${VERSION} --no-build --output .
     - name: Push NuGet package NuGet.org
       run: dotnet nuget push "*.nupkg" --source https://api.nuget.org/v3/index.json --api-key ${APIKEY}
       env:
