@@ -1,3 +1,5 @@
+name: Release and Push to NuGet
+
 on:
   push:
     tags:
@@ -6,15 +8,26 @@ jobs:
   build:
     runs-on: ubuntu-latest
     timeout-minutes: 15
+
     steps:
     - name: Checkout
-      uses: actions/checkout@v2
+      uses: actions/checkout@v4
       with:
         fetch-depth: 0
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: 10.0.x
+        dotnet-quality: preview
+    - uses: NuGet/setup-nuget@v2.0.0
+      with:
+        nuget-version: latest
+
     - name: Verify commit exists in origin/main
       run: git branch --remote --contains | grep origin/main
     - name: Set VERSION variable from tag
       run: echo "VERSION=${GITHUB_REF/refs\/tags\/v/}" >> $GITHUB_ENV
+
     - name: Build
       run: dotnet build --configuration Release /p:Version=${VERSION}
     - name: Pack
