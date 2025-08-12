@@ -13,7 +13,7 @@
 		<AccelerateBuildsInVisualStudio>true</AccelerateBuildsInVisualStudio>
 		<NugetAuditMode>all</NugetAuditMode>
 		<NugetAuditLevel>low</NugetAuditLevel>
-		
+
 		<!-- Set up the NuGet package to be an MCP server -->
 		<PackAsTool>true</PackAsTool>
 		<PackageType>McpServer</PackageType>
@@ -28,6 +28,20 @@
 		<PackageTags>Guid; UUID; MCP; server; stdio</PackageTags>
 		<PackageLicenseExpression>MIT</PackageLicenseExpression>
 		<Description>An MCP server generating new Guid (v4, v7)</Description>
+		<PackageProjectUrl>https://github.com/pocki/guid-mcp/</PackageProjectUrl>
+		<RepositoryUrl>https://github.com/pocki/guid-mcp.git</RepositoryUrl>
+		<PackageLicenseExpression>MIT</PackageLicenseExpression>
+		<PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+		<RepositoryType>git</RepositoryType>
+		<IncludeSymbols>True</IncludeSymbols>
+		<PublishRepositoryUrl>true</PublishRepositoryUrl>
+		<EmbedUntrackedSources>true</EmbedUntrackedSources>
+		<DebugSymbols>true</DebugSymbols>
+		<DebugType>portable</DebugType>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(TF_BUILD)' == 'true'">
+		<ContinuousIntegrationBuild>true</ContinuousIntegrationBuild>
 	</PropertyGroup>
 
 	<!-- Include additional files for browsing the MCP server. -->
@@ -37,6 +51,10 @@
 
 	<ItemGroup>
 		<PackageReference Include="Microsoft.Extensions.Hosting" Version="10.0.0-preview.6.25358.103" />
+		<PackageReference Include="Microsoft.SourceLink.GitHub" Version="8.0.0">
+			<PrivateAssets>all</PrivateAssets>
+			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+		</PackageReference>
 		<PackageReference Include="ModelContextProtocol" Version="0.3.0-preview.3" />
 	</ItemGroup>
 
