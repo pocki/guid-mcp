@@ -41,7 +41,7 @@ jobs:
 
     - name: Update project version
       run: |
-          sed -i 's/{{VERSION}}/${{ steps.version.outputs.VERSION }}/g' .mcp/server.json
+          sed -i 's/{{VERSION}}/${{ steps.version.outputs.VERSION }}/g' GuidMCPServer/.mcp/server.json
 
     - name: Build
       run: dotnet build --configuration Release /p:Version=${VERSION}
