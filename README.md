@@ -7,7 +7,7 @@ Model Context Protocol (MCP) server that generates a new Guid (v4, v7).
 Once the MCP server package is published to NuGet.org, you can configure it in your preferred IDE. Both VS Code and Visual Studio use the `dnx` command to download and install the MCP server package from NuGet.org.
 
 
-> **ℹ️ INFO:** `dnx` is part of .NET SDK 10 (preview).  
+> **ℹ️ INFO:** `dnx` is part of .NET SDK 10.  
 Install .NET SDK 10 to use the MCP server via nuget package directly. You can download it from the [.NET SDK download page](https://dotnet.microsoft.com/download/dotnet/10.0).
 
 
@@ -68,3 +68,6 @@ Refer to the VS Code or Visual Studio documentation for more information on conf
 
 - [Use MCP servers in VS Code (Preview)](https://code.visualstudio.com/docs/copilot/chat/mcp-servers)
 - [Use MCP servers in Visual Studio (Preview)](https://learn.microsoft.com/visualstudio/ide/mcp-servers)
+
+
+<!-- mcp-name: io.github.pocki/guid-mcp -->

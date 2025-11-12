@@ -36,7 +36,12 @@ jobs:
       run: git branch --remote --contains | grep origin/main
 
     - name: Set VERSION variable from tag
+      id: version
       run: echo "VERSION=${GITHUB_REF/refs\/tags\/v/}" >> $GITHUB_ENV
+
+    - name: Update project version
+      run: |
+          sed -i 's/{{VERSION}}/${{ steps.version.outputs.VERSION }}/g' .mcp/server.json
 
     - name: Build
       run: dotnet build --configuration Release /p:Version=${VERSION}

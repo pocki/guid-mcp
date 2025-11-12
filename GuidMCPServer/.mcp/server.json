@@ -1,21 +1,23 @@
 {
-  "$schema": "https://modelcontextprotocol.io/schemas/draft/2025-07-09/server.json",
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-10-17/server.schema.json",
   "description": "generates a new Guid (v4, v7)",
   "name": "io.github.pocki/guid-mcp",
   "packages": [
     {
-      "registry_name": "nuget",
-      "name": "pock-programming.guid-mcp",
-      "version": "0.1.0",
-      "package_arguments": [],
-      "environment_variables": []
+      "registryType": "nuget",
+      "registryBaseUrl": "https://api.nuget.org",
+      "identifier": "pock-programming.guid-mcp",
+      "version": "{{VERSION}}",
+      "runtimeHint": "dnx",
+      "transport": {
+        "type": "stdio"
+      },
+      "environmentVariables": []
     }
   ],
   "repository": {
     "url": "https://github.com/pocki/guid-mcp",
     "source": "github"
   },
-  "version_detail": {
-    "version": "0.1.0"
-  }
+  "version": "{{VERSION}}"
 }
