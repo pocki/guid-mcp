@@ -2,7 +2,7 @@
 
 - **Project Type**: Class Library
 - **Language**: C#
-- **Framework / Libraries**: .NET 9+
+- **Framework / Libraries**: .NET 10+
 - **Description**: This solution is a MCP Server for generating UUIDs (GUIDs) and is packaged as a NuGet packge.
 
 ## 🔧 General Guidelines

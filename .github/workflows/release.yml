@@ -27,7 +27,7 @@ jobs:
       uses: actions/setup-dotnet@v4
       with:
         dotnet-version: 10.0.x
-        dotnet-quality: preview
+
     - uses: NuGet/setup-nuget@v2.0.0
       with:
         nuget-version: latest

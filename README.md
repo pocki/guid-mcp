@@ -8,7 +8,7 @@ Once the MCP server package is published to NuGet.org, you can configure it in y
 
 
 > **ℹ️ INFO:** `dnx` is part of .NET SDK 10 (preview).  
-Install .NET SDK 10 (currently in preview) to use the MCP server via nuget package directly. You can download it from the [.NET SDK download page](https://dotnet.microsoft.com/download/dotnet/10.0).
+Install .NET SDK 10 to use the MCP server via nuget package directly. You can download it from the [.NET SDK download page](https://dotnet.microsoft.com/download/dotnet/10.0).
 
 
 - **VS Code**: Create a `<WORKSPACE DIRECTORY>/.vscode/mcp.json` file
